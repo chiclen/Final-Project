@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+video {
+    width: 300px;
+    height: auto;
+    border: 2px solid #ccc;
+}
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+#file-input {
+    display: none;
+}
+#canvas {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #ccc;
+}

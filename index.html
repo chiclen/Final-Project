@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 10px;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #loading {
+            display: none;
+            font-size: 18px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        #result-table {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Skin Cancer Detection</h1>
+    </header>
+    <main>
+        <h2>Choose Image Source for Prediction</h2>
+        <input type="file" id="file-input" accept="image/*" style="display: none;">
+        <br>
+        <video id="webcam" autoplay style="display: block; margin: 20px auto; width: 300px;"></video>
+        <canvas id="canvas" width="300" height="300" style="display: none; margin: 20px auto; width: 300px;"></canvas>
+        <button id="cam-btn">Camera</button>
+        <button id="chooseFile-btn">Choose File Image</button>
+        <button id="upload-btn">Capture and Upload</button>
+        <p id="loading" style="display: none;">Processing... Please wait.</p>
+        <table id="result-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Predicted Type</b></td>
+                    <td id="predicted-name"></td>
+                </tr>
+                <tr>
+                    <td><b>Description</b></td>
+                    <td id="description"></td>
+                </tr>
+                <tr>
+                    <td><b>Confidence</b></td>
+                    <td id="confidence"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <script src="static/script.js" defer></script>
+</body>
+</html>
